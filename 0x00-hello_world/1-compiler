@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -C $CFILE -o "${CFILE:0:${#CFILE}-2}"".o"
+gcc -c $CFILE -o "${CFILE:0:${#CFILE}-2}"".o"
