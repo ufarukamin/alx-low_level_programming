@@ -1,3 +1,0 @@
-#!/bin/bash
-CFILE="main.c"
-echo "${CFILE:0:${#CFILE}-2}"".o"
