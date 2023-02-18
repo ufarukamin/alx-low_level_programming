@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 /**
-* main - print a - z
+* main - print a - z except e and q
 * Return: zero
 */
 int main(void)
@@ -18,4 +18,5 @@ int main(void)
 		c++;
 	}
 	putchar('\n');
+	return (0);
 }
