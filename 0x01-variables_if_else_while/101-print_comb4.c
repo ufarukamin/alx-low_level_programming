@@ -14,7 +14,7 @@ int main(void)
 	{
 		for (j = i + 1; j <= '8'; j++)
 		{
-			k = i + 2;
+			k = j + 1;
 			while (k <= '9')
 			{
 				putchar(i);
