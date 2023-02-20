@@ -1,34 +1,29 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
-* main - prints all possible different combinations of three digits.
-* Return: zero
+ * main - prints all possible combinations of two two-digit numbers.
+ *
+ * Return: Always 0
 */
 int main(void)
 {
-	int i = '0';
-	int j, k;
+	int i = 0, j;
 
-	while (i <= '7')
+	while (i <= 98)
 	{
-		for (j = i + 1; j <= '8'; j++)
+		for (j = i + 1; j <= 99; j++)
 		{
-			k = j + 1;
-			while (k <= '9')
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			putchar(' ');
+			putchar((j / 10) + '0');
+			putchar((j % 10) + '0');
+			if (i == 98 && j == 99)
 			{
-				putchar(i);
-				putchar(j);
-				putchar(k);
-				if (i == '7' && j == '8' && k == '9')
-				{
-					k++;
-					continue;
-				}
-				putchar(',');
-				putchar(' ');
-				k++;
+				continue;
 			}
+			putchar(',');
+			putchar(' ');
 		}
 		i++;
 	}
