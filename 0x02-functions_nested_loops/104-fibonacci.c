@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	float n1 = 1, n2 = 2, n3;
+	double n1 = 1, n2 = 2, n3;
 
 	printf("1, 2, ");
 	for (i = 2; i < 98; i++)
