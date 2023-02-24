@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
- * positive_or_negative - function that prints if integer
+ * my_positive_or_negative - function that prints if integer
  * is positive or negative.
  * @i: An integer.
  * Return: Nothing.
 */
-void positive_or_negative(int i)
+void my_positive_or_negative(int i)
 {
 	if (i > 0)
 	{
