@@ -26,20 +26,22 @@ int _strlen(char *s)
 */
 char *_strstr(char *haystack, char *needle)
 {
-	char *haystack_copy = needle, *needle_copy = haystack;
+	int length_haystack = _strlen(haystack), i, index;
+	int length_needle = _strlen(needle), j;
 
-	while (*haystack)
+	for (i = 0; i <= (length_haystack - length_needle); i++)
 	{
-		haystack_copy = haystack;
-		needle = needle_copy;
-		while (*haystack == *needle)
+		index = i;
+		for (j = 0, index = i; j < length_needle; j++, index++)
 		{
-			haystack++;
-			needle++;
+			if (haystack[index] == needle[j])
+			{
+				if (j == (length_needle - 1))
+					return (haystack + i);
+				continue;
+			}
+			break;
 		}
-		if (*needle == '\0')
-			return (haystack);
-		haystack = haystack_copy + 1;
 	}
 	return ('\0');
 }
