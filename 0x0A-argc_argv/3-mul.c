@@ -138,7 +138,7 @@ int main(int argc, char *argv[])
 {
 	int num1, num2;
 
-	if (argc >= 3)
+	if (argc == 3)
 	{
 		num1 = _atoi(argv[1]);
 		num2 = _atoi(argv[2]);
