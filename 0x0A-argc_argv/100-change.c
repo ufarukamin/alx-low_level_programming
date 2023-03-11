@@ -1,5 +1,6 @@
-#include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
 * _count_coins - return minimium coins.
@@ -54,7 +55,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 2)
 	{
-		cents = _atoi(argv[1]);
+		cents = atoi(argv[1]);
 		if (cents < 0)
 		{
 			printf("%d\n", 0);
