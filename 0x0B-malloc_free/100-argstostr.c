@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 	char *array;
 	int i, j, index = 0, allLegth = 0, length;
 
-	if (ac == 1 || av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 		allLegth += _strlen(av[i]) + 1;
