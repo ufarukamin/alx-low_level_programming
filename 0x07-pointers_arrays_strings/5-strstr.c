@@ -1,21 +1,5 @@
 #include "main.h"
-
-/**
- * _strlen - returns the length of a string.
- * @s: a string.
- * Return: the length of a string.
-*/
-int _strlen(char *s)
-{
-	int length = 0;
-
-	while (s[length] != '\0')
-	{
-		length++;
-	}
-	return (length);
-}
-
+#include <stdio.h>
 
 /**
 * _strstr - finds the first occurrence of the substring.
@@ -26,22 +10,20 @@ int _strlen(char *s)
 */
 char *_strstr(char *haystack, char *needle)
 {
-	int length_haystack = _strlen(haystack), i, index;
-	int length_needle = _strlen(needle), j;
+	char *startn = needle, *starth = haystack;
 
-	for (i = 0; i <= (length_haystack - length_needle); i++)
+	while (*haystack)
 	{
-		index = i;
-		for (j = 0, index = i; j < length_needle; j++, index++)
+		starth = haystack;
+		needle = startn;
+		while (*haystack == *needle)
 		{
-			if (haystack[index] == needle[j])
-			{
-				if (j == (length_needle - 1))
-					return (haystack + i);
-				continue;
-			}
-			break;
+			haystack++;
+			needle++;
 		}
+		if (*needle == '\0')
+			return (haystack);
+		haystack = starth + 1;
 	}
-	return ('\0');
+	return (NULL);
 }
