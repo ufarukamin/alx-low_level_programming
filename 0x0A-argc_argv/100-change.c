@@ -13,31 +13,28 @@ int _count_coins(int cents)
 
 	while (cents > 0)
 	{
-		if (cents % 25 == 0)
+		count++;
+		if ((cents - 25) >= 0)
 		{
-			cents = cents - 25;
-			count++;
+			cents -= 25;
+			continue;
 		}
-		else if (cents % 10 == 0)
+		if ((cents - 10) >= 0)
 		{
-			cents = cents - 10;
-			count++;
+			cents -= 10;
+			continue;
 		}
-		else if (cents % 5 == 0)
+		if ((cents - 5) >= 0)
 		{
-			cents = cents - 5;
-			count++;
+			cents -= 5;
+			continue;
 		}
-		else if (cents % 2 == 0)
+		if ((cents - 2) >= 0)
 		{
-			cents = cents - 2;
-			cents++;
+			cents -= 2;
+			continue;
 		}
-		else if (cents % 1 == 0)
-		{
-			cents = cents - 1;
-			count++;
-		}
+		cents--;
 	}
 	return (count);
 }
