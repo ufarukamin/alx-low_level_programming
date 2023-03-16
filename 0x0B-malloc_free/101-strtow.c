@@ -46,7 +46,7 @@ int words_c(char *str)
  */
 char *set_strings(char *str, int start, int end)
 {
-	char *array = (char *)malloc(sizeof(char) * (end - start) + 1);
+	char *array = malloc(sizeof(char) * (end - start) + 1);
 	int i, j;
 
 	if (array == NULL)
@@ -78,7 +78,7 @@ char **strtow(char *str)
 	words = words_c(str);
 	if (words < 1)
 		return (NULL);
-	array = (char **)malloc(sizeof(char *) * words + 1);
+	array = malloc(sizeof(char *) * words + 1);
 	if (array == NULL)
 		return (NULL);
 	for (i = 0; i < length; i++)
