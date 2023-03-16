@@ -32,10 +32,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *array;
 	unsigned int l1 = 0, l2 = 0, totalLength, i, index = 0;
 
-	if (s1 != NULL)
-		l1 = _strlen(s1);
-	if (s2 != NULL)
-		l2 = _strlen(s2);
+	if (s1 == NULL)
+		s1 = "";
+	l1 = _strlen(s1);
+	if (s2 == NULL)
+		s2 = "";
+	l2 = _strlen(s2);
 	if (l1 + l2 <= 0)
 		return (NULL);
 	if (n >= l2)
