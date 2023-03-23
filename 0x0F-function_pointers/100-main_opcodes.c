@@ -9,27 +9,27 @@
  */
 int main(int argc, char *argv[])
 {
-	int bytes, i;
-	unsigned char *func_ptr;
+	char *ptr;
+	int i, bytes;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	bytes = atoi(argv[1]);
-	if (bytes < 0)
+	if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	func_ptr = (unsigned char *)main;
+	ptr = (char *)&main;
+	bytes = atoi(argv[1]);
 	i = 0;
-	if (bytes > 0)
+	while (i < bytes - 1)
 	{
-		while (i < (bytes - 1))
-			printf("%02hhx ", func_ptr[i++]);
-		printf("%hhx\n", func_ptr[i]);
+		printf("%02hhx ", ptr[i]);
+		i++;
 	}
+	printf("%02hhx\n", ptr[i]);
 	return (0);
 }
