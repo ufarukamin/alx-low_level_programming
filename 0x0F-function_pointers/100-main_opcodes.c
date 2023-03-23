@@ -4,33 +4,32 @@
 /**
  * main - a program that prints the opcodes of its own main function
  * @argc: number of args
- * @argc: array arguments
+ * @argv: array arguments
  * Return: 0
  */
 int main(int argc, char *argv[])
 {
-	char *add;
-	int i, bytes;
+	int bytes, i;
+	unsigned char *func_ptr;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	if (atoi(argv[1]) < 0)
+	bytes = atoi(argv[1]);
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	
-	add = (char *)main;
-	bytes = atoi(argv[1]);
+	func_ptr = (unsigned char *)main;
 	i = 0;
-	while (i < bytes - 1)
+	if (bytes > 0)
 	{
-		printf("%02hhx ", add[i]);
-		i++;
+		while (i < (bytes - 1))
+			printf("%02hhx ", func_ptr[i++]);
+		printf("%hhx\n", func_ptr[i]);
 	}
-	printf("%hhx\n", add[i]);
 	return (0);
 }
