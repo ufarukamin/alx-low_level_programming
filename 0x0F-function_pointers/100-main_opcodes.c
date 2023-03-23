@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 	
-	add = (char *)&main;
+	add = (char *)main;
 	bytes = atoi(argv[1]);
 	i = 0;
 	while (i < bytes - 1)
@@ -31,6 +31,6 @@ int main(int argc, char *argv[])
 		printf("%02hhx ", add[i]);
 		i++;
 	}
-	printf("%02hhx\n", add[i]);
+	printf("%hhx\n", add[i]);
 	return (0);
 }
