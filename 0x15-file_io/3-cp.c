@@ -27,13 +27,12 @@ int desc_error(int err_val, const char *_file)
 void cp_helper(const char *src, const char *dest)
 {
 	int from_o, to_o, file_r, file_w;
-	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buff[1024];
 
 	from_o = open(src, O_RDONLY);
 	if (src == NULL || from_o < 0)
 		exit(desc_error(98, src));
-	to_o = open(dest, O_CREAT | O_WRONLY | O_TRUNC, mode);
+	to_o = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (dest == NULL || to_o < 0)
 		exit(desc_error(99, dest));
 	file_r = read(from_o, buff, 1024);
@@ -76,5 +75,5 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	cp_helper(argv[1], argv[2]);
-	exit(0);
+	return (0);
 }
